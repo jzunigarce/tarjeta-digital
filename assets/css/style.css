@@ -174,7 +174,19 @@ td a {
 .parent-tab-active {
   background-color: red;
 }
-/* */
+/**/
+/*Close tab*/
+  .close-tab {
+    display: none;
+    text-align: right;
+  }
+
+  .close-tab a {
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+  }
+/**/
 
 .primary {
 	background-color: #057da7;

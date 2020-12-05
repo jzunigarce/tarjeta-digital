@@ -17,8 +17,27 @@
     profile.classList.add("small-profile");
   }
 
-  function openPage(evt,pageName) {
+  function closeTab() {
     var tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    const tabActive = document.querySelector(".tablinks.active");
+    debugger
+    if(tabActive === null)
+      return
+    tabActive.classList.remove("active");
+    disableParentTabLinks(tabActive);
+    //tablinks = document.getElementsByClassName("tablinks");
+    /*for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+      disableParentTabLinks(tablinks[i]);
+    }*/
+  }
+
+  function openPage(evt,pageName) {
+    /*var tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (let i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
@@ -27,7 +46,8 @@
     for (let i = 0; i < tablinks.length; i++) {
       tablinks[i].classList.remove("active");
       disableParentTabLinks(tablinks[i]);
-    }
+    }*/
+    closeTab();
     document.getElementById(pageName).style.display = "block";
     evt.currentTarget.classList.add("active");
     activeParentTabLinks(evt.currentTarget);

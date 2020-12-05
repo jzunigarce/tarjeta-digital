@@ -3,270 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="theme-color" content="#057da7">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 	<title>Carlos Manuel</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<style>
-	@font-face {
-  font-family: 'fontello';
-  src: url('assets/font/fontello.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: never;
- display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1em;
-  margin-left: .2em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
- 
-.icon-help-circled:before { content: '\e800'; } /* '' */
-.icon-info-circled:before { content: '\e801'; } /* '' */
-.icon-link:before { content: '\e802'; } /* '' */
-.icon-vcard:before { content: '\e803'; } /* '' */
-.icon-mobile:before { content: '\e804'; } /* '' */
-.icon-mail:before { content: '\e805'; } /* '' */
-.icon-mail-1:before { content: '\e806'; } /* '' */
-.icon-phone:before { content: '\e807'; } /* '' */
-.icon-phone-circled:before { content: '\e808'; } /* '' */
-.icon-megaphone:before { content: '\e809'; } /* '' */
-.icon-location:before { content: '\e80a'; } /* '' */
-.icon-location-1:before { content: '\e80b'; } /* '' */
-.icon-instagram-1:before { content: '\e80c'; } /* '' */
-.icon-home:before { content: '\e80d'; } /* '' */
-.icon-qrcode:before { content: '\e80e'; } /* '' */
-.icon-down-open:before { content: '\e80f'; } /* '' */
-.icon-right-open:before { content: '\e810'; } /* '' */
-.icon-right-small:before { content: '\e811'; } /* '' */
-.icon-ccw:before { content: '\e812'; } /* '' */
-.icon-floppy:before { content: '\e813'; } /* '' */
-.icon-layout:before { content: '\e814'; } /* '' */
-.icon-th-large-outline:before { content: '\e815'; } /* '' */
-.icon-videocam:before { content: '\e816'; } /* '' */
-.icon-play-circled2:before { content: '\e817'; } /* '' */
-.icon-play:before { content: '\e818'; } /* '' */
-.icon-pause:before { content: '\e819'; } /* '' */
-.icon-stop:before { content: '\e81a'; } /* '' */
-.icon-play-1:before { content: '\e81b'; } /* '' */
-.icon-search:before { content: '\e81c'; } /* '' */
-.icon-search-1:before { content: '\e81d'; } /* '' */
-.icon-lock:before { content: '\e81e'; } /* '' */
-.icon-cancel:before { content: '\e81f'; } /* '' */
-.icon-cancel-1:before { content: '\e820'; } /* '' */
-.icon-chat:before { content: '\e821'; } /* '' */
-.icon-chat-1:before { content: '\e822'; } /* '' */
-.icon-star-empty:before { content: '\e823'; } /* '' */
-.icon-star:before { content: '\e824'; } /* '' */
-.icon-skype:before { content: '\e825'; } /* '' */
-.icon-skype-outline:before { content: '\e826'; } /* '' */
-.icon-folder-open:before { content: '\e827'; } /* '' */
-.icon-export:before { content: '\e828'; } /* '' */
-.icon-share-1:before { content: '\e829'; } /* '' */
-.icon-user:before { content: '\e82a'; } /* '' */
-.icon-basket:before { content: '\e82b'; } /* '' */
-.icon-tag:before { content: '\e82c'; } /* '' */
-.icon-tag-1:before { content: '\e82d'; } /* '' */
-.icon-tag-2:before { content: '\e82e'; } /* '' */
-.icon-ok:before { content: '\e82f'; } /* '' */
-.icon-heart:before { content: '\e830'; } /* '' */
-.icon-th-large:before { content: '\e831'; } /* '' */
-.icon-th:before { content: '\e832'; } /* '' */
-.icon-clock:before { content: '\e833'; } /* '' */
-.icon-clock-1:before { content: '\e834'; } /* '' */
-.icon-calendar:before { content: '\e835'; } /* '' */
-.icon-book-open:before { content: '\e836'; } /* '' */
-.icon-download:before { content: '\f02e'; } /* '' */
-.icon-linkedin-1:before { content: '\f05c'; } /* '' */
-.icon-link-ext:before { content: '\f08e'; } /* '' */
-.icon-docs:before { content: '\f0c5'; } /* '' */
-.icon-linkedin:before { content: '\f0e1'; } /* '' */
-.icon-quote-left:before { content: '\f10d'; } /* '' */
-.icon-quote-right:before { content: '\f10e'; } /* '' */
-.icon-folder-open-empty:before { content: '\f115'; } /* '' */
-.icon-calendar-empty:before { content: '\f133'; } /* '' */
-.icon-link-ext-alt:before { content: '\f14c'; } /* '' */
-.icon-youtube:before { content: '\f167'; } /* '' */
-.icon-youtube-play:before { content: '\f16a'; } /* '' */
-.icon-instagram:before { content: '\f16d'; } /* '' */
-.icon-share:before { content: '\f1e0'; } /* '' */
-.icon-copyright:before { content: '\f1f9'; } /* '' */
-.icon-whatsapp:before { content: '\f232'; } /* '' */
-.icon-twitter:before { content: '\f309'; } /* '' */
-.icon-twitter-circled:before { content: '\f30a'; } /* '' */
-.icon-facebook:before { content: '\f30c'; } /* '' */
-.icon-facebook-circled:before { content: '\f30d'; } /* '' */
-.icon-linkedin-circled:before { content: '\f319'; } /* '' */
 
-/*estilos generales*/ 
-body {
-	background-color: blue; 
-}
-.card {
-	background-color: white;
-}
-
-.full-image {
-	position: relative;
-}
-.floatbox {
-    position: absolute;
-    z-index: 2;
-    right: 0;
-    top: 0;
-    width: 80px;
-    height: 100%;
-    text-align: center;
-}	
-
-.floatbox a {
-	display: inline-block;
-}
-.profile .image {
-    width: 300px;
-    height: 200px;
-    text-align: center;
-    margin: 0 auto 1rem;
-    background: url(profile.jpg) no-repeat center center;
-    background-size: cover;
-}
-.bigbuttons {
-	width: 320px;
-    text-align: center;
-    margin: 5rem auto;
-}
-.bigbuttons i {
-	padding: 2rem;
-	border-radius: 100%;
-}
-.profile {
-	text-align: center;
-    margin: 0 auto;
-    position: relative;
-}
-.buttons-foo {
-	width: 100%;
-}
-.buttons-foo td {
-	display: inline-block;
-	text-align: center;
-	width: 25%;
-	padding: 1.5rem 0;
-}
-td a {
-	color: white;
-}
-
-.primary {
-	background-color: #057da7;
-}
-
-.color_primary {
-color:#057da7;
-}
-
-.info {
-	margin: -3rem auto;
-}
-
-.info h1 {
-	margin-bottom: 0;
-}
-
-.info p {
-	margin-top: 0;
-}
-
-.tabcontent {
-  display: none;
-  padding: 0 20px 100px;
-  height: 100%;
-}
-.content-card {
-	margin:4rem 0 1rem;
-}
-
-.links a {
-	padding: 0;
-}
-
-.links img {
-	width: 100%;
-    height: 260px;
-    object-fit: cover;
-    object-position: center;
-}
-.center {
-	text-align: center;
-}
-
-.align-bottom {
-	vertical-align: bottom;
-}
-.small-i {
-	font-size: 16px;
-	vertical-align: top;
-    line-height: 2;
-}
-
-button {
-	background-color: transparent;
-    border: 0;
-    color: white;
-    font-size: 24px;
-    outline: transparent;
-}
-
-footer {
-	position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-@media only screen and (max-width: 640px)  {
-.content-card {
-    margin: 0rem 0 1rem;
-}
-}
-
-@media only screen and (max-width: 768px)  {
-.bigbuttons {
-	width: 270px;
-}
-.links img {
-	height: 160px;
-}
-.tabcontent {
-padding: 3rem 20px 100px	
-}
-.profile .image {
-width: 200px;
-margin: -2rem auto 1rem;
-background-size: 100%;
-}
-.full-image img {
-object-fit: cover;
-height: 200px;
-object-position: -386px 0;	
-}
-.info  {
-	margin:-6rem auto 1rem;
-}	
-}
-
-</style>
 <body>
 <header></header>
 <div class="card">
@@ -302,52 +46,52 @@ object-position: -386px 0;
 	</div>
 	</div>
 	<div class="col-xs-12 col-sm-12 col-lg-6">
-		<div id="Info" class="tabcontent">
-	<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-    <div class="slides center"></div>
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <ol class="indicator"></ol>
-</div>
-<h2>Galería</h2>
-	<div id="links" class="row links">
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-02.jpg" data-gallery><img src="images/gallery/VillasdeCalifornia-01.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-02.jpg"><img src="images/gallery/VillasdeCalifornia-02.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-03.jpg"><img src="images/gallery/VillasdeCalifornia-03.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-04.jpg"><img src="images/gallery/VillasdeCalifornia-04.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-05.jpg"><img src="images/gallery/VillasdeCalifornia-05.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-06.jpg"><img src="images/gallery/VillasdeCalifornia-06.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-07.jpg"><img src="images/gallery/VillasdeCalifornia-07.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-08.jpg"><img src="images/gallery/VillasdeCalifornia-08.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-09.jpg"><img src="images/gallery/VillasdeCalifornia-09.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-10.jpg"><img src="images/gallery/VillasdeCalifornia-10.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-11.jpg"><img src="images/gallery/VillasdeCalifornia-11.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-12.jpg"><img src="images/gallery/VillasdeCalifornia-12.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-13.jpg"><img src="images/gallery/VillasdeCalifornia-13.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-14.jpg"><img src="images/gallery/VillasdeCalifornia-14.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-15.jpg"><img src="images/gallery/VillasdeCalifornia-15.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-16.jpg"><img src="images/gallery/VillasdeCalifornia-16.jpg" alt=""></a>
-		<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-17.jpg"><img src="images/gallery/VillasdeCalifornia-17.jpg" alt=""></a>
-	</div>
-</div>
+		<div id="Info" class="tabcontent" style="display: block">
+			<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+			    <div class="slides center"></div>
+			    <h3 class="title"></h3>
+			    <a class="prev">‹</a>
+			    <a class="next">›</a>
+			    <a class="close">×</a>
+			    <ol class="indicator"></ol>
+			</div>
+			<h2>Galería</h2>
+			<div id="links" class="row links">
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-02.jpg" data-gallery><img src="images/gallery/VillasdeCalifornia-01.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-02.jpg"><img src="images/gallery/VillasdeCalifornia-02.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-03.jpg"><img src="images/gallery/VillasdeCalifornia-03.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-04.jpg"><img src="images/gallery/VillasdeCalifornia-04.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-05.jpg"><img src="images/gallery/VillasdeCalifornia-05.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-06.jpg"><img src="images/gallery/VillasdeCalifornia-06.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-07.jpg"><img src="images/gallery/VillasdeCalifornia-07.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-08.jpg"><img src="images/gallery/VillasdeCalifornia-08.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-09.jpg"><img src="images/gallery/VillasdeCalifornia-09.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-10.jpg"><img src="images/gallery/VillasdeCalifornia-10.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-11.jpg"><img src="images/gallery/VillasdeCalifornia-11.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-12.jpg"><img src="images/gallery/VillasdeCalifornia-12.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-13.jpg"><img src="images/gallery/VillasdeCalifornia-13.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-14.jpg"><img src="images/gallery/VillasdeCalifornia-14.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-15.jpg"><img src="images/gallery/VillasdeCalifornia-15.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-16.jpg"><img src="images/gallery/VillasdeCalifornia-16.jpg" alt=""></a>
+				<a class="col-xs-6 col-md-4" href="images/gallery/VillasdeCalifornia-17.jpg"><img src="images/gallery/VillasdeCalifornia-17.jpg" alt=""></a>
+			</div>
+		</div>
 
-<div id="Qrcode" class="tabcontent">
-	Qrcode
-</div>
-<div id="Contact" class="tabcontent">
-	Contact
-</div>
-<div id="Location" class="tabcontent">
-	Location
-</div>
-<div id="Info" class="tabcontent">
-	Info
-</div>
-<div id="Share" class="tabcontent">
-	Share
-</div>
+		<div id="Qrcode" class="tabcontent">
+			Qrcode
+		</div>
+		<div id="Contact" class="tabcontent">
+			Contact
+		</div>
+		<div id="Location" class="tabcontent">
+			Location
+		</div>
+		<div id="Info" class="tabcontent">
+			Info
+		</div>
+		<div id="Share" class="tabcontent">
+			Share
+		</div>
 	</div>
 </div>
 </div>
@@ -358,29 +102,12 @@ object-position: -386px 0;
 				<td><button class="tablinks" onclick="openPage(event,'Contact')"><i class="icon-user"></button></td>
 				<td><button class="tablinks" onclick="openPage(event,'Location')"><i class="icon-location"></button></td>
 				<td><button class="tablinks" onclick="openPage(event,'Info')"><i class="icon-info-circled" id="defaultOpen"></button></td>
-					<td><button class="tablinks" onclick="openPage(event,'Share')"><i class="icon-share"></i></button></td>
+				<td><button class="tablinks" onclick="openPage(event,'Share')"><i class="icon-share"></i></button></td>
 			</tr>
 		</tbody>
 	</table>
 
-<script>
-function openPage(evt,pageName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(pageName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
+<script type="text/javascript" src="./assets/js/main.js"></script>
 <script src="assets/js/blueimp-gallery.min.js"></script>
 <script>
 document.getElementById('links').onclick = function (event) {

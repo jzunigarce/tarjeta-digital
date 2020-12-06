@@ -12,9 +12,18 @@
     parent.classList.remove("parent-tab-active");
   }
 
-  function activeSmallProfile() {
-    const profile = document.querySelector("div.profile");
-    profile.classList.add("small-profile");
+  function activeSmall() {
+    const containerProfile = document.querySelector(".container-profile");
+    containerProfile.classList.add("small")
+    const containerTabs = document.querySelector(".container-tabs");
+    containerTabs.classList.add("small")
+  }
+
+  function disableSmall() {
+    const containerProfile = document.querySelector(".container-profile");
+    containerProfile.classList.remove("small")
+    const containerTabs = document.querySelector(".container-tabs");
+    containerTabs.classList.remove("small")
   }
 
   function closeTab() {
@@ -24,38 +33,53 @@
       tabcontent[i].style.display = "none";
     }
     const tabActive = document.querySelector(".tablinks.active");
-    debugger
     if(tabActive === null)
       return
     tabActive.classList.remove("active");
     disableParentTabLinks(tabActive);
-    //tablinks = document.getElementsByClassName("tablinks");
-    /*for (let i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-      disableParentTabLinks(tablinks[i]);
-    }*/
+    
+  }
+
+  function handleCloseTab() {
+    hideCloseButton()
+    closeTab()
+    showDefaultTab();
+    disableSmall();
+  }
+
+  function showCloseButton() {
+    const closeTabButton = document.querySelector(".close-tab-icon");
+    closeTabButton.style.display = "block";
+  }
+
+  function hideCloseButton() {
+      const closeTabButton = document.querySelector(".close-tab-icon");
+      closeTabButton.style.display = "none"
+  }
+
+  function showDefaultTab() {
+    const defaultTab = document.querySelector(".default-tab");
+    defaultTab.style.display = "block";
   }
 
   function openPage(evt,pageName) {
-    /*var tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (let i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-      disableParentTabLinks(tablinks[i]);
-    }*/
     closeTab();
     document.getElementById(pageName).style.display = "block";
     evt.currentTarget.classList.add("active");
     activeParentTabLinks(evt.currentTarget);
-    activeSmallProfile();
-
+    activeSmall();
+    showCloseButton()
   }
+
 
 
   // Get the element with id="defaultOpen" and click on it
   //document.getElementById("defaultOpen").click();
 
+/*const closeTabIcon = document.querySelection(".close-tab-icon");
+
+closeTabIcon.addEventListener("webkitAnimationEnd", myEndFunction);
+closeTabIcon.addEventListener("animationend", myEndFunction);
+
+closeTabIcon.addEventListener("webkitAnimationStart", myStartFunction);
+closeTabIcon.addEventListener("animationstart", myStartFunction);*/

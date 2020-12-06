@@ -140,20 +140,26 @@ body {
 	padding: 2rem;
 	border-radius: 100%;
 }
+/*Containers small*/
+  .container-profile.small {
+    width: 35%;
+  }
+  .container-tabs.small {
+    width: 65%;
+  }
+/**/
 .profile {
 	text-align: center;
     margin: 0 auto;
     position: relative;
 }
-.profile .image {
-  transition:  width .5s, height 0.5s;
-}
+
 /*small-profile*/
-.small-profile .image {
+.container-profile.small .profile .image {
   width: 200px;
   height: 100px;
 }
-.small-profile .bigbuttons {
+.container-profile.small .profile .bigbuttons {
   display: none;
 }
 /**/
@@ -169,22 +175,40 @@ body {
 td a {
 	color: white;
 }
-
 /* Tabs parent color */
 .parent-tab-active {
   background-color: red;
 }
 /**/
 /*Close tab*/
-  .close-tab {
+  .close-tab-icon {
+    background-color: white;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
     display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
     text-align: right;
+    transition: top 2s;
   }
 
-  .close-tab a {
+  .close-tab-icon a {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
     color: black;
+    display: inline-block;
+    font-size: 12px;
+    padding: 10px 20px;
     text-decoration: none;
-    padding: 20px;
+  }
+
+  .close-tab-icon a i {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+  .small .close-tab-icon{
+    top: -30px;
   }
 /**/
 
@@ -213,8 +237,15 @@ color:#057da7;
   padding: 0 20px 100px;
   height: 100%;
 }
+.default-tab {
+  display: block;
+}
 .content-card {
-	margin:4rem 0 1rem;
+	/*margin:4rem 0 1rem;*/
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  max-width: 1400px;
 }
 
 .links a {
@@ -272,7 +303,6 @@ footer {
   }
   .profile .image {
   width: 200px;
-  margin: -2rem auto 1rem;
   background-size: 100%;
   }
   .full-image img {
@@ -283,4 +313,26 @@ footer {
   .info  {
   	margin:-6rem auto 1rem;
   }	
+  .container-profile .profile {
+    opacity: 1;
+    -moz-transition: all 0.8s ease-in;
+    -o-transition: all 0.8s ease-in;
+    -webkit-transition: all 0.8s ease-in;
+    transition: all 0.8s ease-in;
+  }
+
+  .container-profile.small .profile {
+    /*display: none;*/
+   opacity: 0;
+    position: absolute;
+    top: 0;
+    left: -500px;
+  }
+  .content-card {
+    flex-direction: column;
+  }
+
+  .container-profile, .container-profile.small, .container-tabs, .container-tabs.small {
+    width: 100%;
+  }
 }

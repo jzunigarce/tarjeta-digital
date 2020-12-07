@@ -298,11 +298,6 @@ footer {
     bottom: 0;
 }
 
-@media only screen and (max-width: 640px)  {
-.content-card {
-    margin: 0rem 0 1rem;
-}
-}
 
 @media only screen and (max-width: 768px)  {
   .bigbuttons {
@@ -320,7 +315,7 @@ footer {
   }
   .full-image img {
   object-fit: cover;
-  height: 200px;
+  height: 250px;
   object-position: -386px 0;	
   }
   .info  {
@@ -339,5 +334,12 @@ footer {
 
   .container-profile, .container-profile.small, .container-tabs, .container-tabs.small {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 563px)  {
+  .full-image img {
+    height: 200px;
+    object-position: -386px 0;  
   }
 }

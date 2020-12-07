@@ -84,33 +84,3 @@
     hideQrTab()
   }
 
-function onStartAnimatedCloseTabIcon(e) {
-  //debugger
-  //if(e.target.style.top === 0)
-    //e.target.style.display = "none";
-}
-
-function onEndAnimatedCloseTabIcon(e) {
-  //debugger
-  //if(e.target.style.top === 0)
-   // e.target.style.display = "none";
-}
-
-
-
-const closeTabIcon = document.querySelector(".close-tab-icon");
-closeTabIcon.addEventListener("transitionstart", onStartAnimatedCloseTabIcon);
-closeTabIcon.addEventListener("webkitTransitionStart", onStartAnimatedCloseTabIcon);
-closeTabIcon.addEventListener("transitionend", onEndAnimatedCloseTabIcon);
-closeTabIcon.addEventListener("webkitTransitionEnd", onEndAnimatedCloseTabIcon);
-
-  // Get the element with id="defaultOpen" and click on it
-  //document.getElementById("defaultOpen").click();
-
-/*const closeTabIcon = document.querySelection(".close-tab-icon");
-
-closeTabIcon.addEventListener("webkitAnimationEnd", myEndFunction);
-closeTabIcon.addEventListener("animationend", myEndFunction);
-
-closeTabIcon.addEventListener("webkitAnimationStart", myStartFunction);
-closeTabIcon.addEventListener("animationstart", myStartFunction);*/

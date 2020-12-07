@@ -41,15 +41,26 @@
   }
 
   function handleCloseTab() {
-    hideCloseButton()
+    //hideCloseButton()
     closeTab()
     showDefaultTab();
     disableSmall();
+    ShowQrTab();
+    document.querySelector(".content-card").classList.remove("small");
   }
 
   function showCloseButton() {
     const closeTabButton = document.querySelector(".close-tab-icon");
     closeTabButton.style.display = "block";
+  }
+
+  function ShowQrTab() {
+    const floatbox = document.querySelector(".floatbox");
+    floatbox.style.display = "table";
+  }
+ function hideQrTab() {
+    const floatbox = document.querySelector(".floatbox");
+    floatbox.style.display = "none";
   }
 
   function hideCloseButton() {
@@ -69,9 +80,29 @@
     activeParentTabLinks(evt.currentTarget);
     activeSmall();
     showCloseButton()
+    document.querySelector(".content-card").classList.add("small");
+    hideQrTab()
   }
 
+function onStartAnimatedCloseTabIcon(e) {
+  //debugger
+  //if(e.target.style.top === 0)
+    //e.target.style.display = "none";
+}
 
+function onEndAnimatedCloseTabIcon(e) {
+  //debugger
+  //if(e.target.style.top === 0)
+   // e.target.style.display = "none";
+}
+
+
+
+const closeTabIcon = document.querySelector(".close-tab-icon");
+closeTabIcon.addEventListener("transitionstart", onStartAnimatedCloseTabIcon);
+closeTabIcon.addEventListener("webkitTransitionStart", onStartAnimatedCloseTabIcon);
+closeTabIcon.addEventListener("transitionend", onEndAnimatedCloseTabIcon);
+closeTabIcon.addEventListener("webkitTransitionEnd", onEndAnimatedCloseTabIcon);
 
   // Get the element with id="defaultOpen" and click on it
   //document.getElementById("defaultOpen").click();

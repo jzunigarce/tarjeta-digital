@@ -298,7 +298,37 @@ footer {
     bottom: 0;
 }
 
+/***Shared button****/
+.share-dialog {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
+}
 
+.share-dialog button{
+	border: 1px solid #cdd;
+	color: #777;
+	font-size: 15px;
+	padding: 8px 10px;
+}
+
+.share-dialog button i[class$="facebook"] {
+	color: #3b5998;
+}
+
+.share-dialog button i[class$="twitter"] {
+	color: #00aced;
+}
+
+.share-dialog button i[class$="whatsapp"] {
+	color: #41d365;
+}
+
+.share-dialog button i[class$="email"] {
+	color: #7d7d7d;
+}
+/********************/
 @media only screen and (max-width: 768px)  {
   .bigbuttons {
   	width: 270px;
@@ -342,4 +372,8 @@ footer {
     height: 200px;
     object-position: -386px 0;  
   }
+  .container-tabs.small .tabcontent {
+    width: 100%;
+  }
+
 }

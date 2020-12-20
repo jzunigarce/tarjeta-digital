@@ -73,11 +73,31 @@
     defaultTab.style.display = "block";
   }
 
+	async function openShareModal() {
+		if(navigator.share === undefined) {
+			console.error("El navegador no soporta esta característica");
+			return;
+		}
+		try {
+			const title = "Compartir";
+			const text = "Cambiar por mensaje que se desee";
+			const url = "https://www.google.com.mx/";
+
+			await navigator.share({title, text, rul})
+		} catch(err) {
+			console.log("Error to sharing");
+		}
+		console.log("Entró");
+	}
+
   function openPage(evt,pageName) {
     closeTab();
     document.getElementById(pageName).style.display = "block";
     evt.currentTarget.classList.add("active");
     activeParentTabLinks(evt.currentTarget);
+		if(pageName === 'Share') {
+			openShareModal();
+		}
     activeSmall();
     showCloseButton()
     document.querySelector(".content-card").classList.add("small");

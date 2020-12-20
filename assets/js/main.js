@@ -84,7 +84,7 @@
 			const url = "https://www.google.com.mx/";
 
 			await navigator.share({title, text, rul});
-			console.log("entró");
+			alert("entró");
 		} catch(err) {
 			console.log("Error to sharing");
 		}

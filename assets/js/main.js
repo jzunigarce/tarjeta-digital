@@ -92,13 +92,13 @@
 		console.log("Entró");
 	}
 
-  function openPage(evt,pageName) {
+  async function openPage(evt,pageName) {
     closeTab();
     document.getElementById(pageName).style.display = "block";
     evt.currentTarget.classList.add("active");
     activeParentTabLinks(evt.currentTarget);
 		if(pageName === 'Share') {
-			openShareModal();
+			await openShareModal();
 		}
     activeSmall();
     showCloseButton()

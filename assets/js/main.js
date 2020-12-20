@@ -76,6 +76,7 @@
 	async function openShareModal() {
 		if(navigator.share === undefined) {
 			console.error("El navegador no soporta esta característica");
+			document.querySelector("#Share").innerHTML = "<strong style='color: red'>El navegador no soporta esta característica</strong>";
 			return;
 		}
 		try {

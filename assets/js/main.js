@@ -83,22 +83,20 @@
 			const title = "Compartir";
 			const text = "Cambiar por mensaje que se desee";
 			const url = "https://www.google.com.mx/";
-			alert("entró");
 		
 			await navigator.share({title, text, url});
 		} catch(err) {
 			console.log("Error to sharing");
 		}
-		console.log("Entró");
 	}
 
-  async function openPage(evt,pageName) {
+ function openPage(evt,pageName) {
     closeTab();
     document.getElementById(pageName).style.display = "block";
     evt.currentTarget.classList.add("active");
     activeParentTabLinks(evt.currentTarget);
 		if(pageName === 'Share') {
-			await openShareModal();
+			openShareModal();
 		}
     activeSmall();
     showCloseButton()

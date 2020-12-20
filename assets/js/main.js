@@ -83,9 +83,9 @@
 			const title = "Compartir";
 			const text = "Cambiar por mensaje que se desee";
 			const url = "https://www.google.com.mx/";
-
-			await navigator.share({title, text, rul});
 			alert("entró");
+		
+			await navigator.share({title, text, rul});
 		} catch(err) {
 			console.log("Error to sharing");
 		}

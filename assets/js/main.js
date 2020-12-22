@@ -19,6 +19,15 @@
     containerTabs.classList.add("small")
   }
 
+	function getSharedOptionalTemplate() {
+	return `<div class="share-dialog">
+		<button data-sharer="facebook" data-title="Tarjeta digital" data-url="https://www.google.com.mx/"><i class="icon-facebook"></i> Facebook</button>
+		<button data-sharer="twitter" data-title="Tarjeta digital" data-url="https://www.google.com.mx/"><i class="icon-twitter"></i> Twitter</button>
+		<button data-sharer="whatsapp" data-title="Tarjeta digital" data-url="https://www.google.com.mx/"><i class="icon-whatsapp"></i> Whatsapp</button>
+		<button data-sharer="email" data-title="Tarjeta digital" data-url="https://www.google.com.mx/"><i class="icon-mail"></i> Email</button>
+	</div>`
+	}
+
   function disableSmall() {
     const containerProfile = document.querySelector(".container-profile");
     containerProfile.classList.remove("small")
@@ -74,9 +83,10 @@
   }
 
 	async function openShareModal() {
+		const sharedContainer = document.querySelector("#Share");
 		if(navigator.share === undefined) {
-			console.error("El navegador no soporta esta característica");
-			document.querySelector("#Share").innerHTML = "<strong style='color: red'>El navegador no soporta esta característica</strong>";
+			sharedContainer.innerHTML = getSharedOptionalTemplate();
+			window.Sharer.init();
 			return;
 		}
 		try {
@@ -103,4 +113,3 @@
     document.querySelector(".content-card").classList.add("small");
     hideQrTab()
   }
-

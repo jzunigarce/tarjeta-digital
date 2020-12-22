@@ -19,13 +19,18 @@
     containerTabs.classList.add("small")
   }
 
-	function getSharedOptionalTemplate() {
-	return `<div class="share-dialog">
-		<button data-sharer="facebook" data-title="Tarjeta digital" data-url="https://www.google.com.mx/"><i class="icon-facebook"></i> Facebook</button>
-		<button data-sharer="twitter" data-title="Tarjeta digital" data-url="https://www.google.com.mx/"><i class="icon-twitter"></i> Twitter</button>
-		<button data-sharer="whatsapp" data-title="Tarjeta digital" data-url="https://www.google.com.mx/"><i class="icon-whatsapp"></i> Whatsapp</button>
-		<button data-sharer="email" data-title="Tarjeta digital" data-url="https://www.google.com.mx/"><i class="icon-mail"></i> Email</button>
-	</div>`
+	String.prototype.toCapitalize = function() {
+		return `${this.charAt(0).toUpperCase()}${this.slice(1)}`;
+	}
+
+	function createCustomShareButton({platform, text, url}) {
+		return `<button data-sharer="${platform}" data-title="${text}" data-url="${url}"><i class="icon-${platform}"></i> ${platform.toCapitalize()}</button>`;
+	}
+
+	function getSharedOptionalTemplate(data) {
+		const platforms = ['facebook', 'twitter', 'whatsapp', 'mail'];
+		const buttons = platforms.map(p => createCustomShareButton({platform: p, ...data})).join('');
+	return `<div class="share-dialog">${buttons}</div>`;
 	}
 
   function disableSmall() {
@@ -84,15 +89,16 @@
 
 	async function openShareModal() {
 		const sharedContainer = document.querySelector("#Share");
+		const title = "Compartir";
+		const text = "Cambiar por mensaje que se desee";
+		const url = "https://www.google.com.mx/";
+
 		if(navigator.share === undefined) {
-			sharedContainer.innerHTML = getSharedOptionalTemplate();
+			sharedContainer.innerHTML = getSharedOptionalTemplate({url, text});
 			window.Sharer.init();
 			return;
 		}
 		try {
-			const title = "Compartir";
-			const text = "Cambiar por mensaje que se desee";
-			const url = "https://www.google.com.mx/";
 		
 			await navigator.share({title, text, url});
 		} catch(err) {

@@ -87,19 +87,15 @@
     defaultTab.style.display = "block";
   }
 
-	async function openShareModal() {
+ function openCustomShareModal({title, text, url}) {
 		const sharedContainer = document.querySelector("#Share");
-		const title = "Compartir";
-		const text = "Cambiar por mensaje que se desee";
-		const url = "https://www.google.com.mx/";
+		sharedContainer.innerHTML = getSharedOptionalTemplate({url, text});
+		window.Sharer.init();
 
-		if(navigator.share === undefined) {
-			sharedContainer.innerHTML = getSharedOptionalTemplate({url, text});
-			window.Sharer.init();
-			return;
-		}
+ }
+
+	async function openNativeShareModal({title, text, url}) {
 		try {
-		
 			await navigator.share({title, text, url});
 		} catch(err) {
 			console.log("Error to sharing");
@@ -108,12 +104,22 @@
 
  function openPage(evt,pageName) {
     closeTab();
+		
+	 if(pageName === 'Share') {
+			const title = "Compartir";
+			const text = "Cambiar por mensaje que se desee";
+			const url = "https://www.google.com.mx/";
+			if(navigator.share !== undefined) {
+				openNativeShareModal({title, text, url});
+				return;
+			} else {
+				openCustomShareModal({title, text, url});
+			}
+		}
+
     document.getElementById(pageName).style.display = "block";
     evt.currentTarget.classList.add("active");
     activeParentTabLinks(evt.currentTarget);
-		if(pageName === 'Share') {
-			openShareModal();
-		}
     activeSmall();
     showCloseButton()
     document.querySelector(".content-card").classList.add("small");

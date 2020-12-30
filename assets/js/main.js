@@ -102,7 +102,7 @@
 		}
 	}
 
- function openPage(evt,pageName) {
+ async function openPage(evt,pageName) {
 		
 	 if(pageName === 'Share') {
 			const title = "Compartir";
@@ -110,7 +110,7 @@
 			const url = "https://www.google.com.mx/";
 			if(navigator.share !== undefined) {
 				hideCloseButton()
-				openNativeShareModal({title, text, url});
+				await openNativeShareModal({title, text, url});
 				return;
 			} else {
 				openCustomShareModal({title, text, url});

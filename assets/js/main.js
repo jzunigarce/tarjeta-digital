@@ -103,7 +103,6 @@
 	}
 
  function openPage(evt,pageName) {
-    closeTab();
 		
 	 if(pageName === 'Share') {
 			const title = "Compartir";
@@ -117,7 +116,7 @@
 				openCustomShareModal({title, text, url});
 			}
 		}
-
+    closeTab();
     document.getElementById(pageName).style.display = "block";
     evt.currentTarget.classList.add("active");
     activeParentTabLinks(evt.currentTarget);

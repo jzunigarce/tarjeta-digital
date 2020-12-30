@@ -102,7 +102,7 @@
 		}
 	}
 
- function openPage(evt,pageName) {
+ async function openPage(evt,pageName) {
     closeTab();
 		
 	 if(pageName === 'Share') {
@@ -110,7 +110,7 @@
 			const text = "Cambiar por mensaje que se desee";
 			const url = "https://www.google.com.mx/";
 			if(navigator.share !== undefined) {
-				openNativeShareModal({title, text, url});
+				await openNativeShareModal({title, text, url});
 				return;
 			} else {
 				openCustomShareModal({title, text, url});

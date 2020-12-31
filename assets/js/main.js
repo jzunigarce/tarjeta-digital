@@ -30,7 +30,7 @@
 	function getSharedOptionalTemplate(data) {
 		const platforms = ['facebook', 'twitter', 'whatsapp', 'mail'];
 		const buttons = platforms.map(p => createCustomShareButton({platform: p, ...data})).join('');
-	return `<div class="share-dialog">${buttons}</div>`;
+		return `<div class="share-dialog">${buttons}</div>`;
 	}
 
   function disableSmall() {
@@ -55,7 +55,6 @@
   }
 
   function handleCloseTab() {
-    //hideCloseButton()
     closeTab()
     showDefaultTab();
     disableSmall();
@@ -87,12 +86,11 @@
     defaultTab.style.display = "block";
   }
 
- function openCustomShareModal({title, text, url}) {
+	function openCustomShareModal({title, text, url}) {
 		const sharedContainer = document.querySelector("#Share");
 		sharedContainer.innerHTML = getSharedOptionalTemplate({url, text});
 		window.Sharer.init();
-
- }
+ 	}
 
 	async function openNativeShareModal({title, text, url}) {
 		try {
@@ -101,10 +99,8 @@
 			console.log("Error to sharing");
 		}
 	}
-
- async function openPage(evt,pageName) {
-		
-	 if(pageName === 'Share') {
+	async function openPage(evt,pageName) {
+	 	if(pageName === 'Share') {
 			const title = "Compartir";
 			const text = "Cambiar por mensaje que se desee";
 			const url = "https://www.google.com.mx/";
@@ -116,12 +112,13 @@
 				openCustomShareModal({title, text, url});
 			}
 		}
-    closeTab();
-    document.getElementById(pageName).style.display = "block";
-    evt.currentTarget.classList.add("active");
-    activeParentTabLinks(evt.currentTarget);
-    activeSmall();
-    showCloseButton()
-    document.querySelector(".content-card").classList.add("small");
-    hideQrTab()
-  }
+		closeTab();
+		document.getElementById(pageName).style.display = "block";
+		evt.currentTarget.classList.add("active");
+		activeParentTabLinks(evt.currentTarget);
+		activeSmall();
+		showCloseButton()
+		document.querySelector(".content-card").classList.add("small");
+		hideQrTab()
+	}
+

@@ -22,9 +22,61 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<style>
+	header {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-gap: 5px;
+	}
+	header div {
+		background-color: red;
+		width: 100px;
+		height: 100px;
+	}
+	#main-content {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+</style>
 </head>
 <body>
-<header></header>
+	<main id="main-content">
+<header>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</header>
 <div class="card">
 	<div class="full-image">
 		<figure><img class="img-responsive" src="full-image.jpg" alt=""></figure>
@@ -97,12 +149,6 @@
 </div>
 </div>
 <footer>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>
-       $(".accordion").on("click", ".accordion-header", function() {
-    $(this).toggleClass("active").next().slideToggle();
- });
-   </script>
    <div class="row botones_cta">
 	<div class="col-xs-6"><a class="color_primary center" href="https://www.edgarlopezarquitectos.com">Ver página web</a></div>
 	<div class="col-xs-6 curriculo">
@@ -119,11 +165,21 @@
 			</tr>
 		</tbody>
 	</table> -->
-
+</footer>
+</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+       $(".accordion").on("click", ".accordion-header", function() {
+    $(this).toggleClass("active").next().slideToggle();
+ });
+   </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.3/smooth-scrollbar.min.js" integrity="sha512-ZJjMc3VqnZJt3HPEuYURgE2y0UZ9KhaBIVms272gfWtCOQyp6IwC9AqJIjmtQXSWopaAwR7/9UjMVeNbJa/ybQ==" crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/js/main.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
-
-</footer>	
+<script type="text/javascript">
+	const Scrollbar = window.Scrollbar;
+	Scrollbar.init(document.querySelector('main'));
+</script>
 </body>
 </html>
